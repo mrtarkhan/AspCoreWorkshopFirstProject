@@ -1,0 +1,27 @@
+﻿
+@model List<AspCoreWorkshopFirstProject.Models.UserAccount>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@foreach (var item in Model)
+{
+    <h6>@item.Name  @item.Family (@item.Email)</h6>
+}
+
+<br />
+
+<form asp-controller="UserAccount" asp-action="AddUser" method="post">
+    name: <input type="text" name="name" id="name" />
+    <br />
+    family: <input type="text" name="family" id="family" />
+    <br />
+    email: <input type="text" name="email" id="email" />
+    <br />
+    <input type="submit" value="add" id="addbtn" />
+
+</form>
+
+
+
